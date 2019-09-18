@@ -2,7 +2,7 @@ class Admin::CategoriesController < ApplicationController
 
   def index
     @categories = Category.order(id: :desc).all
-    @updated_at = Time.now.httpdate
+    @queried_at = Time.now.httpdate
   end
 
   def new

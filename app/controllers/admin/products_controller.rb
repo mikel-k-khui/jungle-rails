@@ -2,6 +2,7 @@ class Admin::ProductsController < ApplicationController
 
   def index
     @products = Product.order(id: :desc).all
+    @queried_at = Time.now.httpdate
   end
 
   def new
