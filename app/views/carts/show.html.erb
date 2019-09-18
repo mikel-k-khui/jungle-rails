@@ -3,7 +3,14 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-  <% if !enhanced_cart.empty? %>
+  <% if enhanced_cart.empty? %>
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">Your cart is empty</h4>
+      <p>Whoever said money can't buy happiness has clearly never been to Jungle</p>
+      <hr>
+      Now go back to the <a href="#" class="alert-link">home page</a> for your happiness.
+    </div>
+  <% else %>
     <div class="panel panel-default items">
       <table class="table table-bordered">
         <thead>
@@ -47,13 +54,6 @@
           </script>
         <% end %>
       </div>
-    </div>
-  <% else %>
-  <div class="alert alert-primary" role="alert">
-    <h4 class="alert-heading">Your cart is empty</h4>
-    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-    <hr>
-    This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
     </div>
   <% end %>
 
