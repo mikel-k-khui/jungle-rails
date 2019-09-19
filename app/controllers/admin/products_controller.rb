@@ -1,6 +1,5 @@
-class Admin::ProductsController < ApplicationController
-
-  http_basic_authenticate_with name: 'Jungle', password: 'book'
+class Admin::ProductsController < Admin::AdminController
+# class Admin::ProductsController < ApplicationController
 
   def index
     @products = Product.order(id: :desc).all
