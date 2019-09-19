@@ -1,7 +1,14 @@
 <section class="users-new"></section>
 
+<h1>Welcome back to the Jungle</h1>
+<%= form_tag '/login' do %>
+
+  Email: <%= text_field_tag :email %>
+  Password: <%= password_field_tag :password %>
+  <%= submit_tag "Submit" %>
+
+<% end %>
 <h1>Welcome to the Jungle</h1>
-    
   <%= form_for :user, url: '/users' do |f| %>
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">

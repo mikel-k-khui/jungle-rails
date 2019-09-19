@@ -1,14 +1,11 @@
 <section class="sessions-new"></section>
 
 <h1>Welcome back to the Jungle</h1>
-  <%= form '/login' do |f| %>
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">
-          Email: <%= f.text_field_tag :email, placeholder: "Enter Your Email", class: "form-control"  %>
-          Password: <%= f.password_field_tag :password, placeholder: "Enter Your Password", class: "form-control"  %>
-      </span>
-    </div>
-    <%= f.submit_tag "Submit" %>
+<%= form_tag '/login' do %>
 
-  <% end %>
+  Email: <%= text_field_tag :email %>
+  Password: <%= password_field_tag :password %>
+  <%= submit_tag "Submit" %>
+
+<% end %>
 </section>
