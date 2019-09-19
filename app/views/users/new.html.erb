@@ -1,0 +1,27 @@
+<section class="users-new"></section>
+
+<h1>Welcome to the Jungle</h1>
+    
+  <%= form_for :user, url: '/users' do |f| %>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">
+        <%= f.text_field :first_name,placeholder: "Enter Your First Name", class: "form-control" %>
+        <%= f.text_field :last_name, placeholder: "Enter Your Last Name", class: "form-control" %>
+      </span>
+    </div>
+    <div class="input-group">
+       <span class="input-group-addon" id="basic-addon1">
+        <%= f.text_field :email, placeholder: "Enter Your Email", class: "form-control"  %>
+      </span>
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">
+        <%= f.password_field :password, placeholder: "Enter A Password", class: "form-control"  %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Your Password", class: "form-control"  %>
+      </span>
+    </div>
+    <%= f.submit "Submit" %>
+
+  <% end %>
+  </div>
+</section>
