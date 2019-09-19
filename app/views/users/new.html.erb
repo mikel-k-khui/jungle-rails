@@ -1,14 +1,22 @@
 <section class="users-new"></section>
 
-<h1>Welcome back to the Jungle</h1>
-<%= form_tag '/login' do %>
+<h1>Welcome to the Jungle</h1>
+<div class="jumbotron">
+    <h2>Are you back for another Jungle adventure?</h2>
+    <h3>Login below</h3>
+    
+<%= form_tag :sessions, url:'/sessions' do %>
 
   Email: <%= text_field_tag :email %>
   Password: <%= password_field_tag :password %>
   <%= submit_tag "Submit" %>
 
 <% end %>
-<h1>Welcome to the Jungle</h1>
+</div>
+
+<div class="jumbotron">
+<h2>Are you new to the Jungle?</h2>
+<h3>Sign up by filling teh below information</h3>
   <%= form_for :user, url: '/users' do |f| %>
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">
@@ -31,4 +39,5 @@
 
   <% end %>
   </div>
+</div>
 </section>

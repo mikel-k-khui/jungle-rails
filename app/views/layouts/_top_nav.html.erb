@@ -40,11 +40,22 @@
             <li><%= link_to 'Products',  [:admin, :products] %></li>
           </ul>
         </li>
-        <li><%= link_to 'Sign up',  [:signup] %></li> 
-        <li><%= link_to 'Login',  [:login] %></li> 
-        <li>
+        <% if !session[:user_id] %>
+          <li><%= link_to 'Come into the Jungle',  [:arrival] %></li> 
+        <% else %>
+          <li>
+            <%= link_to [:departure] do %>
+              This way to leave the Jungle, <%= current_user.first_name %>
+            <% end %>
+          </li> 
+        <% end %>
+          <li>
           <%= link_to cart_path do %>
-            <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
+            <% if !session[:user_id] %>
+              <%= fa_icon "shopping-cart" %> My cart (<%= cart.size %>)
+            <% else %>
+              <%= fa_icon "shopping-cart" %> <%= current_user.first_name  %>'s' cart has <%= pluralize(cart.size, 'product') %>
+            <% end %>
           <% end %>
         </li>
       </ul>

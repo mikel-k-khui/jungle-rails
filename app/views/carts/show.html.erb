@@ -1,12 +1,16 @@
 <section class="cart-show">
 
   <header class="page-header">
-    <h1>My Cart</h1>
+    <% if !current_user %>
+      <h1>My Cart</h1>
+    <% else %>
+      <h1><%= current_user.first_name %>'s Cart</h1>
+    <% end %>
   </header>
   <% if enhanced_cart.empty? %>
     <div class="alert alert-info" role="alert">
-      <h4 class="alert-heading">Your cart is empty</h4>
-      <p>Whoever said money can't buy happiness has clearly never been to Jungle</p>
+      <h4 class="alert-heading">Your cart looks empty</h4>
+      <p>Whoever said money can't buy happiness has clearly never been to the Jungle</p>
       <hr>
       Now go back to the <a href="#" class="alert-link">home page</a> for your happiness.
     </div>
