@@ -4,6 +4,12 @@ class Sale < ActiveRecord::Base
   validates :ends_on, presence: true
   validates :percent_off, presence: true, numericality: true
 
+  # Active Record scope
+  def self.active
+    self.where("sales.starts_on <= ? AND sales.ends_on >= ?", 
+      Date.current, Date.current)
+  end
+
   def finished?
     ends_on < Date.current
   end
