@@ -41,7 +41,7 @@ RSpec.feature "UserLogins", type: :feature, js: true do
 
     # VERIFY
     expect(page).to have_content 'This way to leave the Jungle,'
-    expect(page).to have_content 'cart has (0) products'
-    expect(page)as_no_text 'Admin'
+    expect(page).to have_content 'cart has 0 products'
+    page.has_no_text? 'Admin'
   end
 end
