@@ -18,7 +18,7 @@ RSpec.feature "Navigate to Product Details page", type: :feature, js: true do
 
   scenario "Go to Product Details" do
     # ACT
-    visit product_path(@category.products.second)
+    visit product_path(@category.products.first)
 
     # DEBUG
     save_screenshot
