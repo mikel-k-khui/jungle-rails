@@ -1,5 +1,5 @@
 # Jungle
-—A mini e-commerce site .
+—Whoever said you cannot buy happiness has never been to the Jungle.
 
 ## Final Product
 
